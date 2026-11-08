@@ -1,4 +1,4 @@
-export const officialLetter = `ما أعرف من وين أبدي، ولا شلون أرتّب الحچي حتى أوصفلج شكد أتمنى يكون هذا اليوم حلو عليج، وشكد أتمنى أشوف الفرحة بعيونج بكل لحظة منه.
+export const officialLetter = `من مهدي إلى اسوقة ♡\n\nما أعرف من وين أبدي، ولا شلون أرتّب الحچي حتى أوصفلج شكد أتمنى يكون هذا اليوم حلو عليج، وشكد أتمنى أشوف الفرحة بعيونج بكل لحظة منه.
 
 كل عام وإنتِ بألف خير يا غسق، يا أجمل إنسانة دخلت حياتي، ويا صاحبة الاسم اللي صار إله مكان مختلف بگلبي.
 
@@ -45,3 +45,7 @@ export const questions = [
  {q:'لو تختارين أمنية لهالسنة، شتكون؟', a:['فرح أكثر','مغامرات جديدة','راحة بال'], replies:['يا رب أيامج كلها فرح ♡','سنة مليانة اكتشافات حلوة!','تستحقين راحة البال وكل الطمأنينة.']},
  {q:'أي لون يشبه مزاجج الحلو؟', a:['وردي','ذهبي','بنفسجي'], replies:['لون الدلال يليق بيج!','لمعة ذهبية مثل روحج ✨','اختيار راقي مثّلج.']}
 ];
+
+export const identity = { name: 'GHASQ', nickname: 'اسوقة', callName: 'اسوقتي', sender: 'مهدي' };
+export const theme = { black: '#09070c', plum: '#1b0d1c', burgundy: '#3c1127', rose: '#d98a9b', gold: '#e4bd7c', white: '#fff6ef' };
+export const settings = { animations: true, canvas: true, enabledSections: { portal: true, museum: true, games: true, galaxy: true, treasure: true, letter: true, finale: true } };

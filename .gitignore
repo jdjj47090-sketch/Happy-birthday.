@@ -7,3 +7,6 @@ out
 *.log
 
 tsconfig.tsbuildinfo
+
+# User-created editable content is stored locally by the admin API
+data/asouga-content.json
