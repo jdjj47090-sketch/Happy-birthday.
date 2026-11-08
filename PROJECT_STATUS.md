@@ -3,7 +3,7 @@
 ## Stage 1 — project inspection and structure
 
 - Inspected the existing Next.js 15 / React 19 / TypeScript application and retained its existing layout, theme, content, and Git history.
-- Confirmed the configured Git remote is the requested repository and the current branch is `main`. No push has been made.
+- Confirmed the configured Git remote is the requested repository and the current branch is `main`. The requested repository is configured on `main`; deployment code is pushed after final local verification.
 
 ## Stage 2 — visual identity, opening, and portal
 
@@ -32,9 +32,9 @@
 
 - Added server-side admin login/logout and protected content API routes.
 - Password verification uses scrypt hashes supplied through server environment variables; signed, HTTP-only, SameSite cookies protect the editor API.
-- Admin editor saves validated identity, theme, settings, letters, memories, questions/replies, and star messages to a private local JSON file. Generated content data is excluded from Git.
+- Admin editor validates content before saving. Production uses a private Vercel Blob object so updates persist across serverless requests and deployments; local development falls back to `data/asouga-content.json` when no Blob token is configured. Generated content data is excluded from Git.
 - Admin requires `ADMIN_PASSWORD_HASH`, `ADMIN_PASSWORD_SALT`, and `ADMIN_SESSION_SECRET`; setup instructions are in `.env.example` and README.
-- This file-based storage is suitable for a persistent Node.js host. Ephemeral/serverless deployments need a durable database or persistent volume before admin edits can persist across instances/redeployments.
+- Vercel production storage is provisioned as a private Blob store named `asouga-content`; the CLI supplies `BLOB_READ_WRITE_TOKEN` to the linked project.
 
 ## Stage 8 — verification
 
@@ -45,9 +45,9 @@
 
 ## Outstanding limitations
 
-- Production deployment must provide the three admin environment variables and persistent storage for `data/asouga-content.json`; ephemeral serverless filesystems will not preserve edits.
+- Production deployment must provide the three admin environment variables and a linked private Blob store. Vercel Hobby currently includes a monthly Blob allowance; see https://vercel.com/docs/vercel-blob/usage-and-pricing.
 - Visual device and browser console checks remain outstanding because no browser automation tool is available here.
-- The specified GitHub URL returned `Repository not found` during remote history inspection, so no push was attempted.
+- GitHub repository access was verified during deployment setup.
 
 ## Additional implementation notes
 
